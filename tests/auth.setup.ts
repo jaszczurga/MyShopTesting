@@ -1,7 +1,7 @@
 import { test as setup, expect } from '@playwright/test';
 
 
-const adminFile = '../.auth/admin.json';
+const adminFile = './.auth/admin.json';
 
 setup('authenticate as admin', async({page}) => {
     await page.goto('./login');
@@ -14,7 +14,7 @@ setup('authenticate as admin', async({page}) => {
     await page.context().storageState({ path: adminFile });
 })
 
-const userFile = '../.auth/user.json'
+const userFile = './.auth/user.json'
 
 setup('authenticate as user', async({page}) => {
     await page.goto('./login');
@@ -24,5 +24,5 @@ setup('authenticate as user', async({page}) => {
 
     await page.waitForURL('**/products',{timeout:5000});
 
-    await page.context().storageState({ path: adminFile });
+    await page.context().storageState({ path: userFile });
 })

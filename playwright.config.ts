@@ -36,6 +36,17 @@ export default defineConfig({
       testMatch:'mainPageNotLoggedIn.spec.ts',
       use: { ...devices['Desktop Chrome'] },
     },
+    {
+      name: 'authSetup',
+      testMatch:'auth.setup.ts',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'mainPageLogged',
+      testMatch:'mainPageLoggedIn.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
+      dependencies:['authSetup']
+    },
 
     /* Test against mobile viewports. */
     // {

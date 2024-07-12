@@ -4,7 +4,7 @@ import {MainPage} from "./MainPage";
 
 export class PageManager{
 
-    private readonly page: Page
+    public readonly page: Page
     private readonly mainPage: MainPage
 
     constructor(page:Page) {

@@ -1,0 +1,25 @@
+{
+  "cookies": [
+    {
+      "name": "jwtToken",
+      "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzIwNzk2NjEwLCJleHAiOjE3MjA3OTgwNTB9.6w6XFASIYtwb_Z3Z695HgDoQBEhtPMK7zsHrDWbcjzg",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://localhost:4200",
+      "localStorage": [
+        {
+          "name": "cartItems",
+          "value": "[]"
+        }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,8 @@ export class MainPage{
     readonly ordersButton: Locator
     readonly chatButton: Locator
     readonly chatIconButton: Locator
-    readonly authButtonText: Locator
+    readonly authLoginButtonText: Locator
+    readonly authLogoutButtonText: Locator
 
     constructor(page:Page) {
         this.page = page;
@@ -17,7 +18,8 @@ export class MainPage{
         this.ordersButton =  page.getByRole('link', { name: 'Orders' })
         this.chatButton =  page.getByRole('link', { name: 'chat' })
         this.chatIconButton =  page.locator('.chat-icon')
-        this.authButtonText =  page.getByTestId('authLoginButtonTestId')
+        this.authLoginButtonText =  page.getByTestId('authLoginButtonTestId')
+        this.authLogoutButtonText =  page.getByTestId('authLogoutButtonTestId')
     }
 
     async goto(){
