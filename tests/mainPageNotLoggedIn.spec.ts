@@ -7,8 +7,6 @@ test.describe('Authentication process test suite',() => {
 
     let page: Page;
 
-
-
     test.beforeAll(async ({ browser }) => {
         page = await browser.newPage();
     });
@@ -17,7 +15,11 @@ test.describe('Authentication process test suite',() => {
         await page.close();
     });
 
-    test('001 given not logged in user when accesing the main page then doesnt see authenticated only buttons', async ({ }) => {
+    test('001 given not logged in user when accesing the main page then doesnt see authenticated only buttons',
+        {
+            tag:["@logout"]
+        },
+        async () => {
         await page.goto('./products');
         const isCartButton = await page.locator('.cart-link').isVisible()
         const isMyProductsButton = await page.getByRole('link', { name: 'MyProducts' }).isVisible();
@@ -34,7 +36,11 @@ test.describe('Authentication process test suite',() => {
         expect(authButtonText).toContain('Login')
     });
 
-    test('002 given admin credentials when logging in then redirect to main page with admin features avaible', async({}) => {
+    test('002 given admin credentials when logging in then redirect to main page with admin features avaible',
+        {
+            tag:["@logout"]
+        },
+        async() => {
         await page.goto('./products');
         await page.getByRole('link', { name: 'Login' }).click();
         await page.getByLabel('Email:').fill(process.env.ADMIN_EMAIL)

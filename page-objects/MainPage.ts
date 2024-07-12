@@ -1,4 +1,5 @@
 import {Locator, Page} from "@playwright/test";
+import {getRawAsset} from "node:sea";
 
 
 export class MainPage{
@@ -10,6 +11,8 @@ export class MainPage{
     readonly chatIconButton: Locator
     readonly authLoginButtonText: Locator
     readonly authLogoutButtonText: Locator
+    readonly userChat: UserChat
+
 
     constructor(page:Page) {
         this.page = page;
@@ -20,9 +23,23 @@ export class MainPage{
         this.chatIconButton =  page.locator('.chat-icon')
         this.authLoginButtonText =  page.getByTestId('authLoginButtonTestId')
         this.authLogoutButtonText =  page.getByTestId('authLogoutButtonTestId')
+        this.userChat = {
+            chatWindow: page.locator('[class="chat-container show-chat"]'),
+            sendButton: page.getByRole('button', { name: 'Send' }),
+            messageInput: page.getByPlaceholder('message'),
+            closeButton: page.locator('.close-button')
+        }
     }
 
     async goto(){
         await this.page.goto('/')
     }
+
+}
+
+interface UserChat {
+    chatWindow: Locator
+    sendButton: Locator
+    messageInput: Locator
+    closeButton: Locator
 }

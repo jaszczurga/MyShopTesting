@@ -47,6 +47,12 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
       dependencies:['authSetup']
     },
+    {
+      name: 'chatTesting',
+      testMatch:'chatTesting.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
+      dependencies:['authSetup']
+    },
 
     /* Test against mobile viewports. */
     // {

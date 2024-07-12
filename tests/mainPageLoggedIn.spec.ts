@@ -21,7 +21,7 @@ async function checkButtonVisibility(page) {
 }
 
 test.describe('testing appearance of main page with logged in user and different roles', () => {
-    test('001 given not logged in admin when accessing the main page then doesn\'t see authenticated admin only buttons', async ({ adminPage }) => {
+    test('001 given not logged in admin when accessing the main page then doesn\'t see authenticated admin only buttons',{tag:["@admin"]},async ({ adminPage }) => {
         await adminPage.accessMainPage().goto();
         await adminPage.page.waitForLoadState();
 
@@ -36,7 +36,7 @@ test.describe('testing appearance of main page with logged in user and different
         expect(visibility.authLoginButtonText).toBeFalsy();
     });
 
-    test('001 given not logged in user when accessing the main page then doesn\'t see authenticated user only buttons', async ({ userPage }) => {
+    test('001 given not logged in user when accessing the main page then doesn\'t see authenticated user only buttons',{tag:["@user"]},async ({ userPage }) => {
         await userPage.accessMainPage().goto();
         await userPage.page.waitForLoadState();
 
