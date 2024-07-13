@@ -1,6 +1,6 @@
 import {Page} from "@playwright/test";
 import {MainPage} from "./MainPage";
-import {AdminChatPage} from "./AdminChat";
+import {AdminChatPage} from "./AdminChatPage";
 
 
 export class PageManager{

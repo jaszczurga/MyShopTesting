@@ -5,10 +5,12 @@ export class AdminChatPage{
     readonly page: Page;
 
     readonly usersPanel: Locator
-    readonly adminChat:AdminChat
+    readonly adminChat:AdminChatPanel
+    readonly pageUrl = process.env.ADMIN_CHAT_URL
 
 
     constructor(page:Page) {
+        this.page= page
         this.usersPanel = page.getByTestId('usersPanel')
         this.adminChat = {
             chatWindow: page.getByTestId('chatPanel'),
@@ -18,12 +20,14 @@ export class AdminChatPage{
     }
 
     async goto(){
-        await this.page.goto('./live-chat')
+        await this.page.goto(this.pageUrl)
     }
+
 }
 
-interface AdminChat {
+interface AdminChatPanel {
     chatWindow: Locator
     sendButton: Locator
     messageInput: Locator
 }
+

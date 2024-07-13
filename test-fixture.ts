@@ -16,13 +16,15 @@ export const test = base.extend<MyFixtures>({
     adminPage: async ({browser},use) => {
         const context = await browser.newContext({ storageState: './.auth/admin.json' });
         const adminPage = new PageManager(await context.newPage());
+        await adminPage.accessMainPage().goto()
         await use(adminPage);
         await context.close();
     },
     userPage: async ({browser},use) => {
         const context = await browser.newContext({ storageState: './.auth/user.json' });
-        const adminPage = new PageManager(await context.newPage());
-        await use(adminPage);
+        const userPage = new PageManager(await context.newPage());
+        await userPage.accessMainPage().goto()
+        await use(userPage);
         await context.close();
     }
 })
