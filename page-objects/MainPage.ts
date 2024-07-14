@@ -12,6 +12,7 @@ export class MainPage{
     readonly authLoginButtonText: Locator
     readonly authLogoutButtonText: Locator
     readonly userChat: UserChat
+    readonly productCardsList: Locator
 
 
     constructor(page:Page) {
@@ -23,6 +24,7 @@ export class MainPage{
         this.chatIconButton =  page.locator('.chat-icon')
         this.authLoginButtonText =  page.getByTestId('authLoginButtonTestId')
         this.authLogoutButtonText =  page.getByTestId('authLogoutButtonTestId')
+        this.productCardsList =  page.locator('app-product').locator('[class="row gx-2 gy-4 text-start row-cols-md-3 row-cols-xl-5 row-cols-sm-2 row-cols-1 row-cols-xxl-5"]').locator('.card')
         this.userChat = {
             chatWindow: page.locator('[class="chat-container show-chat"]'),
             sendButton: page.getByRole('button', { name: 'Send' }),

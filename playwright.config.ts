@@ -53,7 +53,28 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
       dependencies:['authSetup']
     },
-
+    {
+      name: 'cartTesting',
+      testMatch:'cartTesting.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
+      dependencies:['authSetup']
+    },
+    {
+      name: 'myProductsTesting',
+      testMatch:'productManagementTesting.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
+      dependencies:['authSetup']
+    },
+    // {
+    //   name: 'authUserSetup',
+    //   grep: /@userSetup/,
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
+    // {
+    //   name: 'authAdminSetup',
+    //   grep: /@adminSetup/,
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
