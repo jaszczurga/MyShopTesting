@@ -3,6 +3,8 @@ import {MainPage} from "./MainPage";
 import {AdminChatPage} from "./AdminChatPage";
 import {AdminCategories} from "./AdminCategories";
 import {AdminProducts} from "./AdminProducts";
+import {ProductDetailPage} from "./ProductDetailPage";
+import {CartPage} from "./CartPage";
 
 
 export class PageManager{
@@ -12,6 +14,8 @@ export class PageManager{
     private _adminChatPage: AdminChatPage
     private _adminCategories: AdminCategories
     private _adminProducts: AdminProducts
+    private _ProductDetailPage: ProductDetailPage
+    private _CartPage: CartPage
 
     constructor(page: Page) {
         this.page = page;
@@ -43,6 +47,20 @@ export class PageManager{
             this._adminProducts = new AdminProducts(this.page);
         }
         return this._adminProducts;
+    }
+
+    accessProductDetailPage(): ProductDetailPage {
+        if (!this._ProductDetailPage) {
+            this._ProductDetailPage = new ProductDetailPage(this.page);
+        }
+        return this._ProductDetailPage;
+    }
+
+    accessCartPage(): CartPage {
+        if (!this._CartPage) {
+            this._CartPage = new CartPage(this.page);
+        }
+        return this._CartPage;
     }
 
 
