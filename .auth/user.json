@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "jwtToken",
-      "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlVTRVIiLCJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiaWF0IjoxNzIwOTcwNDc2LCJleHAiOjE3MjA5NzE5MTZ9.A0YrSm-CHvKhBNypthcaCne_b1BugyIiivbtYu1b7Q4",
+      "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlVTRVIiLCJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiaWF0IjoxNzIxMDY2NzU5LCJleHAiOjE3MjEwNjgxOTl9.uecgJX9T5ug5lnobFQPZOVoanvMK4TYHdRm6dOvcdqw",
       "domain": "localhost",
       "path": "/",
       "expires": -1,

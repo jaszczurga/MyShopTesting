@@ -1,6 +1,6 @@
 
 import { test as base, type Page, type Locator } from '@playwright/test';
-import {PageManager} from "./page-objects/pageManager";
+import {PageManager} from "./page-objects/PageManager";
 
 
 
