@@ -2,7 +2,11 @@
   "name": "myshoptesting",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "ui" : "npx playwright test --ui",
+    "allure gen" : "allure generate allure-results -o allure-report --clean",
+    "allure show" : "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

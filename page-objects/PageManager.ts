@@ -5,6 +5,7 @@ import {AdminCategories} from "./AdminCategories";
 import {AdminProducts} from "./AdminProducts";
 import {ProductDetailPage} from "./ProductDetailPage";
 import {CartPage} from "./CartPage";
+import {CheckoutPage} from "./CheckoutPage";
 
 
 export class PageManager{
@@ -16,6 +17,7 @@ export class PageManager{
     private _adminProducts: AdminProducts
     private _ProductDetailPage: ProductDetailPage
     private _CartPage: CartPage
+    private _CheckoutPage: CheckoutPage
 
     constructor(page: Page) {
         this.page = page;
@@ -61,6 +63,13 @@ export class PageManager{
             this._CartPage = new CartPage(this.page);
         }
         return this._CartPage;
+    }
+
+    accessCheckoutPage(): CheckoutPage {
+        if (!this._CheckoutPage) {
+            this._CheckoutPage = new CheckoutPage(this.page);
+        }
+        return this._CheckoutPage;
     }
 
 
